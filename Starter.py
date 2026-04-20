@@ -14,8 +14,8 @@ tree = discord.app_commands.CommandTree(client)
 
 @client.event
 async def on_ready():
-    print(f"Bot is ready. Logged in as {client.user} (ID: {client.user.id})")
     await tree.sync(guild=discord.Object(id=GUILD_ID))
+    print(f"Bot is ready. Logged in as {client.user} (ID: {client.user.id})")
 
 # Commands
 @tree.command(name="ping", description="sends ping of bot", guild=discord.Object(id=GUILD_ID))
